@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'fr.yuuki.vms'
+version 'alpha1.0'
+archivesBaseName = 'VolnariumModerationSystem'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation group: 'org.spigotmc', name: 'spigot', version: '1.17.1-R0.1-SNAPSHOT', changing: true
+}
+
+test {
+    useJUnitPlatform()
+}

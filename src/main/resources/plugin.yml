@@ -1,0 +1,10 @@
+name: VolnaruimModerationSystem
+main: fr.yuuki.vms.main
+version: alpha1.0
+api-version: 1.17
+author: YuuKi
+
+commands:
+  mod:
+  report:
+  modtp:
