@@ -2,6 +2,7 @@ package fr.yuuki.vms.managers;
 
 import fr.yuuki.vms.Utils.ItemBuilder;
 import fr.yuuki.vms.main;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -15,6 +16,7 @@ public class PlayerManager {
     private Player player;
     private ItemStack[] items = new ItemStack[40];;
     private Location location;
+    private boolean vanished;
 
     public PlayerManager(Player player){
         this.player = player;
@@ -24,34 +26,35 @@ public class PlayerManager {
         instance.players.put(player.getUniqueId(), this);
         this.location = player.getLocation();
         player.setGameMode(GameMode.SURVIVAL);
+        player.setWalkSpeed((float) 0.1);
         player.setAllowFlight(true);
         player.setFlying(true);
         player.setFlySpeed((float) 0.1);
 
         this.saveInv();
         player.getInventory().clear();
-        // TODO Mise auto en vanish
+        setVanished(true);
         /**
-         * TODO give item moderation
          * InvManager (inv et ec) - Chest
          * PlayerManager (Tout se qui conserne le joueur) - PlayerHead
-         * Moderation (Moderation général du server) - Book
+         * Vanish - rend invisible le joueur
+         * Freeze - Ice (A mettre dans le /mod dirrectement)
          * ModérateurManager (Gamemode 0 ou 3, Speed, Fly, Vanish ?)
          * Sortie du mode Moderateur (tp au /mod)
          */
 
         ItemBuilder invManager = new ItemBuilder(Material.CHEST).setName("§eInventory Manager").setLore(" ", "§7Clique droit sur un joueur", "§7Pour voir son Inventaire ou son EnderChest.");
         ItemBuilder playerManager = new ItemBuilder(Material.PLAYER_HEAD).setName("§bPlayer Manager").setLore(" ", "§7Clique droit sur un joueur", "§7Pour pouvoir acceder a tous ce qui le concerne.");
-        ItemBuilder moderation = new ItemBuilder(Material.BOOK).setName("§aGeneral Moderation").setLore(" ", "§7Clique droit pour ouvrir le menu", "§7Permet de géré la modération général du server.");
+        ItemBuilder freeze = new ItemBuilder(Material.BLUE_ICE).setName("§bFreeze").setLore(" ", "§7Clique droit pour le joueur visé");
+        ItemBuilder vanish = new ItemBuilder(Material.GRAY_DYE).setName("§8Vanish").setLore(" ", "§7Clique droit pour vous rendre invisible");
         ItemBuilder moderateurManager = new ItemBuilder(Material.BLAZE_POWDER).setName("§5Moderator Manager").setLore(" ", "§7Clique droit pour ouvrir le menu", "§7Permet de géré tout se qui concerne le modérateur.");
-        ItemBuilder randomTP = new ItemBuilder(Material.ENDER_PEARL).setName("§dRandom TP").setLore(" ", "§7Clique droit pour se téléporter aléatoirement a un joueur");
         ItemBuilder exit = new ItemBuilder(Material.BARRIER).setName("§cExit").setLore(" ", "§7Clique droit pour sortir du mod modération");
 
         player.getInventory().setItem(0, invManager.toItemStack()); // InvManager (inv et ec) - Chest
         player.getInventory().setItem(1, playerManager.toItemStack()); // PlayerManager (Tout se qui conserne le joueur) - PlayerHead
-        player.getInventory().setItem(3, moderation.toItemStack()); // Moderation (Moderation général du server) - Book
+        player.getInventory().setItem(3, freeze.toItemStack()); // Freeze
         player.getInventory().setItem(5, moderateurManager.toItemStack()); // ModérateurManager (Gamemode 0 ou 3, Speed, Fly, Vanish ?)
-        player.getInventory().setItem(7, randomTP.toItemStack()); // RandomTp - téléporte a un joueur rdm (en vanish)
+        player.getInventory().setItem(7, vanish.toItemStack()); // Vanish
         player.getInventory().setItem(8, exit.toItemStack()); // Sortie du mode Moderateur (tp au /mod)
     }
 
@@ -62,8 +65,9 @@ public class PlayerManager {
         player.setGameMode(GameMode.SURVIVAL);
         player.setAllowFlight(false);
         player.setFlying(false);
+        player.setWalkSpeed((float) 0.1);
         this.giveInv();
-        // TODO Mise auto en dé-vanish
+        setVanished(false);
     }
 
     public static PlayerManager getFromPlayer(Player player){
@@ -110,6 +114,23 @@ public class PlayerManager {
     }
 
     public static boolean isInMod(Player player){
-        return instance.moderateurs.contains(player.getUniqueId()); // TODO modifier toutes les condition
+        return instance.moderateurs.contains(player.getUniqueId());
+    }
+
+    public boolean isVanished() {
+        return vanished;
+    }
+
+    public static boolean isInModerationMod(Player player){
+        return main.getInstance().getModerateurs().contains(player.getUniqueId());
+    }
+
+    public void setVanished(boolean vanished){
+        this.vanished = vanished;
+        if(vanished){
+            Bukkit.getOnlinePlayers().forEach(players -> players.hidePlayer(player));
+        } else {
+            Bukkit.getOnlinePlayers().forEach(players -> players.showPlayer(player));
+        }
     }
 }

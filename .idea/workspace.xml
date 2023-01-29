@@ -4,30 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41290f03-8c1e-4243-b971-8f3c8ca8b3dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/Utils/ItemBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Commands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/InvSee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Punish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ClickInv.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModCancels.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModItemInteract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/EventsManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/PlayerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/ReportManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+    <list default="true" id="41290f03-8c1e-4243-b971-8f3c8ca8b3dd" name="Changes" comment="tt">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/FreezeCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Methode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/PlayerCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/OnRightClick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/PlayerQuit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/Utils/ItemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/Utils/ItemBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/InvSee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/InvSee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Punish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ClickInv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ClickInv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModCancels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModCancels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModItemInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModItemInteract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/EventsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/EventsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/PlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/ReportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/ReportManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +64,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/InvSee.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -158,8 +157,32 @@
       <workItem from="1672334262294" duration="3449000" />
       <workItem from="1672355458694" duration="10458000" />
       <workItem from="1672403495132" duration="3349000" />
-      <workItem from="1672424842724" duration="9540000" />
+      <workItem from="1672424842724" duration="10484000" />
+      <workItem from="1672600951511" duration="4314000" />
+      <workItem from="1672852476009" duration="6729000" />
+      <workItem from="1673176786172" duration="11198000" />
+      <workItem from="1673299080271" duration="3302000" />
+      <workItem from="1673379471709" duration="4207000" />
+      <workItem from="1673388428077" duration="484000" />
+      <workItem from="1673650144228" duration="3944000" />
+      <workItem from="1673819650228" duration="2227000" />
+      <workItem from="1673903911639" duration="1218000" />
+      <workItem from="1673988727968" duration="776000" />
+      <workItem from="1674162954131" duration="4858000" />
+      <workItem from="1674343262871" duration="4045000" />
+      <workItem from="1674388253337" duration="378000" />
+      <workItem from="1674758442684" duration="4094000" />
+      <workItem from="1674945444911" duration="2157000" />
+      <workItem from="1675007600125" duration="2448000" />
     </task>
+    <task id="LOCAL-00001" summary="tt">
+      <created>1672510575152</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672510575152</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,5 +198,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tt" />
+    <option name="LAST_COMMIT_MESSAGE" value="tt" />
   </component>
 </project>

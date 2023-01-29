@@ -40,7 +40,8 @@ public class Commands implements CommandExecutor {
             String targetName = strings[0];
 
             if(Bukkit.getPlayer(targetName) == null){
-                player.sendMessage("§6§lModeration §7>> §cLe joueur n'existe pas ou n'est pas connecté"); // TODO prefix a changer
+                player.sendMessage("§6§lModeration §7>> §cLe joueur n'existe pas ou n'est pas connecté");
+
                 return false;
             }
 
@@ -52,11 +53,18 @@ public class Commands implements CommandExecutor {
                 pm.init();
                 pm.saveInv();
                 player.sendMessage("§6§lModeration §7>> §fTu as été mis en mode modérateur et téléporté a §a" + target.getName());
+                pm.setVanished(true);
                 player.teleport(target);
                 return false;
             } else {
-                // TODO check si il est en vanish et le mettre si non
-                player.sendMessage("§6§lModeration §7>> §fTu as été mis en vanish et téléporté a §a" + target.getName());
+                PlayerManager pm = new PlayerManager(player);
+                if(!pm.isVanished()){
+                    pm.setVanished(true);
+                    player.sendMessage("§6§lModeration §7>> §fTu as été mis en vanish et téléporté a §a" + target.getName());
+                } else {
+                    pm.setVanished(false);
+                    player.sendMessage("§6§lModeration §7>> §fTu as été téléporté a §a" + target.getName());
+                }
                 player.teleport(target);
                 return false;
             }
@@ -87,14 +95,14 @@ public class Commands implements CommandExecutor {
 
         if(s.equalsIgnoreCase("report")){
             if(strings.length < 1 ){
-                player.sendMessage("§c§lReport §7>> §cMerci de donner le pseudo du joueur"); // TODO prefix a changer
+                player.sendMessage("§c§lReport §7>> §cMerci de donner le pseudo du joueur");
                 return false;
             }
 
             String targetName = strings[0];
 
             if(Bukkit.getPlayer(targetName) == null){
-                player.sendMessage("§c§lReport §7>> §cLe joueur n'existe pas ou n'est pas connecté"); // TODO prefix a changer
+                player.sendMessage("§c§lReport §7>> §cLe joueur n'existe pas ou n'est pas connecté");
                 return false;
             }
 

@@ -8,3 +8,6 @@ commands:
   mod:
   report:
   modtp:
+  invsee:
+  manage:
+  freeze:

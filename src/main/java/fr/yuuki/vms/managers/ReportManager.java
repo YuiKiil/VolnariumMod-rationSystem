@@ -12,18 +12,14 @@ public class ReportManager {
     private main instance = main.getInstance();
 
     private Player player;
-    private UUID playerUUDI;
     private Player targetPlayer;
-    private UUID targetUUID;
     private String reason;
     private String message;
     private int repID = instance.nextRepID();
 
-    public ReportManager(Player player, UUID playerUUDI, Player targetPlayer, UUID targetUUID, String reason, String message){
+    public ReportManager(Player player, Player targetPlayer, String reason, String message){
         this.player = player;
-        this.playerUUDI = playerUUDI;
         this.targetPlayer = targetPlayer;
-        this.targetUUID = targetUUID;
         this.reason = reason;
         this.message = message;
 
@@ -47,9 +43,6 @@ public class ReportManager {
                 TextComponent del = new TextComponent("§a[Supprimer]");
                 del.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Not implemented").create()));
                 players.spigot().sendMessage(tp , punish , del);
-                /**
-                 * TODO message json with tp, sanctionne, refuse (pour delete le report)
-                 */
             }
         }
     }
@@ -66,9 +59,6 @@ public class ReportManager {
         return player;
     }
 
-    public UUID getPlayerUUDI() {
-        return playerUUDI;
-    }
 
     public Player getTargetPlayer() {
         return targetPlayer;
@@ -78,9 +68,6 @@ public class ReportManager {
         return message;
     }
 
-    public UUID getTargetUUID() {
-        return targetUUID;
-    }
 
     public String getReason() {
         return reason;
