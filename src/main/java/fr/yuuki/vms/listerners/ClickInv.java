@@ -1,12 +1,9 @@
 package fr.yuuki.vms.listerners;
 
-import fr.yuuki.vms.Utils.ItemBuilder;
 import fr.yuuki.vms.commands.Methode;
 import fr.yuuki.vms.managers.PlayerManager;
-import fr.yuuki.vms.managers.ReportManager;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,78 +23,24 @@ public class ClickInv implements Listener {
         PlayerManager mod = PlayerManager.getFromPlayer(player);
 
         switch(e.getCurrentItem().getType()){
-
-            /**
-             * Report InvClick
-             */
-            case IRON_SWORD:
-                if(e.getCurrentItem().getItemMeta().getDisplayName().equals("§bTriche§8")){
-                    e.setCancelled(true);
-                    player.closeInventory();
-                    String reported = e.getView().getTitle().substring(18);
-                    Player target = Bukkit.getPlayer(reported);
-                    ReportManager rep = new ReportManager(player, target, "Triche", null);
-                    rep.createReport();
-                }
-                break;
-            case RED_DYE:
-                if(e.getCurrentItem().getItemMeta().getDisplayName().equals("§bAnti-Afk§8")){
-                    e.setCancelled(true);
-                    player.closeInventory();
-                    String reported = e.getView().getTitle().substring(18);
-                    Player target = Bukkit.getPlayer(reported);
-                    ReportManager rep = new ReportManager(player, target, "AntiAFK", null);
-                    rep.createReport();
-                }
-                break;
-            case BARRIER:
-                if(e.getCurrentItem().getItemMeta().getDisplayName().equals("§bBug-Abuse§7")){
-                    e.setCancelled(true);
-                    player.closeInventory();
-                    String reported = e.getView().getTitle().substring(18);
-                    Player target = Bukkit.getPlayer(reported);
-                    ReportManager rep = new ReportManager(player, target, "BugAbuse", null);
-                    rep.createReport();
-
-                }
-                break;
             case FEATHER:
-                if(e.getCurrentItem().getItemMeta().getDisplayName().equals("§bLanguage§6")){
+                if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§eGestion de la vitesse de vole")) {
                     e.setCancelled(true);
-                    player.closeInventory();
-                    String reported = e.getView().getTitle().substring(18);
-                    Player target = Bukkit.getPlayer(reported);
-                    ReportManager rep = new ReportManager(player, target, "Language", null);
-                    rep.createReport();
-                } else if (e.getCurrentItem().getItemMeta().getDisplayName().equals("§eGestion de la vitesse de vole")) {
-                    e.setCancelled(true);
-                    if(player.getFlySpeed() == 0.1){
-                        player.setFlySpeed((float) 0.2);
-                    } else if (player.getFlySpeed() == 0.2) {
+                    if(player.getFlySpeed() == (float) 0.2){
                         player.setFlySpeed((float) 0.3);
-                    } else if (player.getFlySpeed() == 0.3) {
+                    } else if (player.getFlySpeed() == (float) 0.3) {
                         player.setFlySpeed((float) 0.4);
-                    } else if (player.getFlySpeed() == 0.4) {
-                        player.setFlySpeed((float) 0.4);
-                    } else if (player.getFlySpeed() >= 0.5) {
-                        player.setFlySpeed((float) 0.1);
+                    } else if (player.getFlySpeed() == (float) 0.4) {
+                        player.setFlySpeed((float) 0.5);
+                    } else if (player.getFlySpeed() == (float) 0.5) {
+                        player.setFlySpeed((float) 0.6);
+                    } else if (player.getFlySpeed() >= (float) 0.6) {
+                        player.setFlySpeed((float) 0.2);
                     }
                     player.closeInventory();
                     pm.ModManage(player);
                 }
                 break;
-            case BLUE_BANNER:
-                if(e.getCurrentItem().getItemMeta().getDisplayName().equals("§bAutre§2")){
-                    e.setCancelled(true);
-                    player.closeInventory();
-                    String reported = e.getView().getTitle().substring(18);
-                    Player target = Bukkit.getPlayer(reported);
-                    ReportManager rep = new ReportManager(player, target, "Autre", null);
-                    rep.createReport();
-
-                }
-                break;
-
             case CHEST:
                 /**
                  * Click InvSee
@@ -127,17 +70,21 @@ public class ClickInv implements Listener {
                     OpenEnd(player, target);
                     break;
                 }
+                break;
             case ORANGE_DYE:
                 e.setCancelled(true);
                 player.closeInventory();
+                break;
             case BLUE_ICE:
                 e.setCancelled(true);
                 player.closeInventory();
-                player.performCommand("freeze" + e.getView().getTitle());
+                player.performCommand("freeze " + e.getView().getTitle());
+                break;
             case BOOK:
                 e.setCancelled(true);
                 player.closeInventory();
                 player.sendMessage("§cReport pas implementer");
+                break;
             case GREEN_DYE:
                 String name = e.getView().getTitle();
                 Player target = Bukkit.getPlayer(name);
@@ -145,32 +92,25 @@ public class ClickInv implements Listener {
                 if(target.getGameMode() == GameMode.CREATIVE) {
                     target.setGameMode(GameMode.SURVIVAL);
                     target.sendMessage("§6§lModeration §7>> §fTu as été mis en gamemode §cSurvie §f!");
-                    player.closeInventory();
-                    pm.playerInv(player, target);
-                    break;
                 } else if (target.getGameMode() == GameMode.SPECTATOR) {
                     target.setGameMode(GameMode.CREATIVE);
                     target.sendMessage("§6§lModeration §7>> §fTu as été mis en gamemode §cCréatif §f!");
-                    player.closeInventory();
-                    pm.playerInv(player, target);
-                    break;
                 } else if (target.getGameMode() == GameMode.SURVIVAL || target.getGameMode() == GameMode.ADVENTURE) {
                     target.setGameMode(GameMode.SPECTATOR);
                     target.sendMessage("§6§lModeration §7>> §fTu as été mis en gamemode §cSpectateur §f!");
-                    player.closeInventory();
-                    pm.playerInv(player, target);
-                    break;
                 }
+                player.closeInventory();
+                pm.playerInv(player, target);
                 break;
             case TOTEM_OF_UNDYING:
                 String nameto = e.getView().getTitle();
                 Player targetto = Bukkit.getPlayer(nameto);
                 e.setCancelled(true);
                 if(targetto.isInvulnerable()){
-                    targetto.setInvulnerable(true);
+                    targetto.setInvulnerable(false);
                     targetto.sendMessage("§6§lModeration §7>> §fTu as été mis en §cGod Mode §f!");
                 } else {
-                    targetto.setInvulnerable(false);
+                    targetto.setInvulnerable(true);
                     targetto.sendMessage("§6§lModeration §7>> §fTu as été retiré en §cGod Mode §f!");
                 }
                 player.closeInventory();
@@ -178,16 +118,16 @@ public class ClickInv implements Listener {
                 break;
             case DIAMOND_BOOTS:
                 e.setCancelled(true);
-                if(player.getWalkSpeed() == 0.1){
-                player.setWalkSpeed((float) 0.2);
-                } else if (player.getWalkSpeed() == 0.2) {
+                if(player.getWalkSpeed() == (float) 0.2){
                     player.setWalkSpeed((float) 0.3);
-                } else if (player.getWalkSpeed() == 0.3) {
+                } else if (player.getWalkSpeed() == (float) 0.3) {
                     player.setWalkSpeed((float) 0.4);
-                } else if (player.getWalkSpeed() == 0.4) {
+                } else if (player.getWalkSpeed() == (float) 0.4) {
                     player.setWalkSpeed((float) 0.5);
-                } else if (player.getWalkSpeed() >= 0.5) {
-                    player.setWalkSpeed((float) 0.1);
+                } else if (player.getWalkSpeed() == (float) 0.5) {
+                    player.setWalkSpeed((float) 0.6);
+                } else if (player.getWalkSpeed() >= (float) 0.6) {
+                    player.setWalkSpeed((float) 0.2);
                 }
                 player.closeInventory();
                 pm.ModManage(player);

@@ -5,25 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41290f03-8c1e-4243-b971-8f3c8ca8b3dd" name="Changes" comment="tt">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/FreezeCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Methode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/PlayerCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/OnRightClick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/PlayerQuit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/Utils/ItemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/Utils/ItemBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/InvSee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/InvSee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Punish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Methode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/commands/Methode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ClickInv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ClickInv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModCancels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModCancels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModItemInteract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/ModItemInteract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/OnRightClick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/listerners/OnRightClick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/EventsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/EventsManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/PlayerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/ReportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/ReportManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/yuuki/vms/managers/ReportManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +71,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RunAnythingCache">
@@ -173,7 +163,9 @@
       <workItem from="1674388253337" duration="378000" />
       <workItem from="1674758442684" duration="4094000" />
       <workItem from="1674945444911" duration="2157000" />
-      <workItem from="1675007600125" duration="2448000" />
+      <workItem from="1675007600125" duration="4367000" />
+      <workItem from="1675029297651" duration="377000" />
+      <workItem from="1675172350419" duration="3420000" />
     </task>
     <task id="LOCAL-00001" summary="tt">
       <created>1672510575152</created>
@@ -182,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672510575152</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="tt">
+      <created>1675027381142</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675027381142</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

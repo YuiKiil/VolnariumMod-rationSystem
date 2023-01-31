@@ -95,27 +95,27 @@ public class Methode {
 
         PlayerManager pm = PlayerManager.getFromPlayer(player);
 
-        if(player.getFlySpeed() <= 0.1){
+        if(player.getFlySpeed() <= (float) 0.2){
             inv.setItem(1, new ItemBuilder(Material.FEATHER).setName("§eGestion de la vitesse de vole").setLore("§a    - Speed 1", "§c    - Speed 2", "§c    - Speed 3", "§c    - Speed 4", "§c    - Speed 5+").toItemStack());
-        } else if (player.getFlySpeed() == 0.2) {
+        } else if (player.getFlySpeed() == (float) 0.3) {
             inv.setItem(1, new ItemBuilder(Material.FEATHER).setName("§eGestion de la vitesse de vole").setLore("§c    - Speed 1", "§a    - Speed 2", "§c    - Speed 3", "§c    - Speed 4", "§c    - Speed 5+").toItemStack());
-        } else if (player.getFlySpeed() == 0.3) {
+        } else if (player.getFlySpeed() == (float) 0.4) {
             inv.setItem(1, new ItemBuilder(Material.FEATHER).setName("§eGestion de la vitesse de vole").setLore("§c    - Speed 1", "§c    - Speed 2", "§a    - Speed 3", "§c    - Speed 4", "§c    - Speed 5+").toItemStack());
-        } else if (player.getFlySpeed() == 0.4) {
+        } else if (player.getFlySpeed() == (float) 0.5) {
             inv.setItem(1, new ItemBuilder(Material.FEATHER).setName("§eGestion de la vitesse de vole").setLore("§c    - Speed 1", "§c    - Speed 2", "§c    - Speed 3", "§a    - Speed 4", "§c    - Speed 5+").toItemStack());
-        } else if (player.getFlySpeed() >= 0.5) {
+        } else if (player.getFlySpeed() >= (float) 0.6) {
             inv.setItem(1, new ItemBuilder(Material.FEATHER).setName("§eGestion de la vitesse de vole").setLore("§c    - Speed 1", "§c    - Speed 2", "§c    - Speed 3", "§c    - Speed 4", "§a    - Speed 5+").toItemStack());
         }
 
-        if(player.getWalkSpeed() <= 0.1){
+        if(player.getWalkSpeed() <= (float) 0.2){
             inv.setItem(3, new ItemBuilder(Material.DIAMOND_BOOTS).setName("§eGestion de la vitesse de marche").setLore("§a    - Speed 1", "§c    - Speed 2", "§c    - Speed 3", "§c    - Speed 4", "§c    - Speed 5+").toItemStack());
-        } else if (player.getWalkSpeed() == 0.2) {
+        } else if (player.getWalkSpeed() == (float) 0.3) {
             inv.setItem(3, new ItemBuilder(Material.DIAMOND_BOOTS).setName("§eGestion de la vitesse de marche").setLore("§c    - Speed 1", "§a    - Speed 2", "§c    - Speed 3", "§c    - Speed 4", "§c    - Speed 5+").toItemStack());
-        } else if (player.getWalkSpeed() == 0.3) {
+        } else if (player.getWalkSpeed() == (float) 0.4) {
             inv.setItem(3, new ItemBuilder(Material.DIAMOND_BOOTS).setName("§eGestion de la vitesse de marche").setLore("§c    - Speed 1", "§c    - Speed 2", "§a    - Speed 3", "§c    - Speed 4", "§c    - Speed 5+").toItemStack());
-        } else if (player.getWalkSpeed() == 0.4) {
+        } else if (player.getWalkSpeed() == (float) 0.5) {
             inv.setItem(3, new ItemBuilder(Material.DIAMOND_BOOTS).setName("§eGestion de la vitesse de marche").setLore("§c    - Speed 1", "§c    - Speed 2", "§c    - Speed 3", "§a    - Speed 4", "§c    - Speed 5+").toItemStack());
-        } else if (player.getWalkSpeed() >= 0.5) {
+        } else if (player.getWalkSpeed() >= (float) 0.6) {
             inv.setItem(3, new ItemBuilder(Material.DIAMOND_BOOTS).setName("§eGestion de la vitesse de marche").setLore("§c    - Speed 1", "§c    - Speed 2", "§c    - Speed 3", "§c    - Speed 4", "§a    - Speed 5+").toItemStack());
         }
 
